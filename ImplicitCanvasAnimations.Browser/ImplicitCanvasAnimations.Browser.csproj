@@ -7,6 +7,8 @@
     <OutputType>Exe</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <MSBuildEnableWorkloadResolver>true</MSBuildEnableWorkloadResolver>
+    <WasmEnableThreads>true</WasmEnableThreads>
+    <WasmEnableSIMD>false</WasmEnableSIMD>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,6 +26,18 @@
 
   <ItemGroup>
     <PackageReference Include="Avalonia.Web" Version="$(AvaloniaVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HarfBuzzSharp" Version="2.8.2.4-preview.7" />
+    <PackageReference Include="HarfBuzzSharp.NativeAssets.WebAssembly" Version="2.8.2.4-preview.7" />
+    <PackageReference Include="SkiaSharp" Version="2.88.4-preview.7" />
+    <PackageReference Include="SkiaSharp.HarfBuzz" Version="2.88.4-preview.7" />
+    <PackageReference Include="SkiaSharp.NativeAssets.WebAssembly" Version="2.88.4-preview.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.WebAssembly.Threading" Version="7.0.0-rc.2.22472.3" />
   </ItemGroup>
 
   <ItemGroup>
