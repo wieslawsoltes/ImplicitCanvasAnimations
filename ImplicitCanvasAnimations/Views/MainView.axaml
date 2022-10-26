@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ImplicitCanvasAnimations.Views.MainView">
+  <Grid RowDefinitions="*,Auto">
+    <Canvas Name="Canvas" 
+            ClipToBounds="True" 
+            Background="WhiteSmoke" 
+            Grid.Row="0" />
+    <StackPanel Orientation="Horizontal" 
+                HorizontalAlignment="Center" 
+                Spacing="6"
+                Margin="0,6,0,6"
+                Grid.Row="1">
+      <Button Name="ButtonClear"
+              HorizontalAlignment="Center" 
+              Click="ButtonClear_OnClick" 
+              Content="Clear" />
+      <Button Name="ButtonBenchmark"
+              HorizontalAlignment="Center" 
+              Click="ButtonBenchmark_OnClick" 
+              Content="Benchmark" />
+      <Button Name="ButtonAdd"
+              HorizontalAlignment="Center" 
+              Click="ButtonAdd_OnClick" 
+              Content="Add" />
+    </StackPanel>
+    <TextBlock Margin="6" 
+               VerticalAlignment="Center" 
+               HorizontalAlignment="Left" 
+               Text="{Binding #Canvas.Children.Count, StringFormat={}Items: {0}}"
+               Grid.Row="1" />
+    <Button Name="ButtonFps"
+            Margin="6" 
+            HorizontalAlignment="Right" 
+            Click="ButtonFps_OnClick" 
+            Content="Fps"
+            Grid.Row="1" />
+  </Grid>
+</UserControl>
+
