@@ -25,7 +25,7 @@ public partial class CanvasItem : UserControl
 
         AttachedToVisualTree += (_, _) =>
         {
-            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromSeconds(1))
+            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromSeconds(1), RxApp.MainThreadScheduler)
                 .ObserveOn(RxApp.MainThreadScheduler)
                 .Subscribe(_ => Move());
         };

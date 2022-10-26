@@ -78,7 +78,7 @@ public partial class MainView : UserControl
     {
         if (_disposable is null)
         {
-            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromMilliseconds(50))
+            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromMilliseconds(50), RxApp.MainThreadScheduler)
                 .ObserveOn(RxApp.MainThreadScheduler)
                 .Subscribe(_ => Add());
 
