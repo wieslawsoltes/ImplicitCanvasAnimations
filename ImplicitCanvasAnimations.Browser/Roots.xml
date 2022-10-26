@@ -1,0 +1,13 @@
+<linker>
+
+  <!-- App -->
+
+  <assembly fullname="ImplicitCanvasAnimations" preserve="All" />
+  <assembly fullname="ImplicitCanvasAnimations.Browser" preserve="All" />
+  <assembly fullname="Avalonia.Xaml.Interactions" preserve="All" />
+
+  <!-- Avalonia Themes -->
+
+  <assembly fullname="Avalonia.Themes.Fluent" preserve="All" />
+
+</linker>
