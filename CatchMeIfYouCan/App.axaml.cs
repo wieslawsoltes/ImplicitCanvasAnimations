@@ -1,10 +1,10 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using ImplicitCanvasAnimations.ViewModels;
-using ImplicitCanvasAnimations.Views;
+using CatchMeIfYouCan.ViewModels;
+using CatchMeIfYouCan.Views;
 
-namespace ImplicitCanvasAnimations;
+namespace CatchMeIfYouCan;
 
 public partial class App : Application
 {
