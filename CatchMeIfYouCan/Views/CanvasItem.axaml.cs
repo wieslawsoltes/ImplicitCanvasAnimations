@@ -16,11 +16,9 @@ public partial class CanvasItem : UserControl
     {
         InitializeComponent();
 
-        var border = Border1;
-
         PointerPressed += (_, _) =>
         {
-            border.Background = Brushes.Green;
+            Border.Background = Brushes.Green;
             _disposable?.Dispose();
         };
 
@@ -39,10 +37,5 @@ public partial class CanvasItem : UserControl
             Canvas.SetLeft(this, left);
             Canvas.SetTop(this, top);
         }
-    }
-
-    private void InitializeComponent()
-    {
-        AvaloniaXamlLoader.Load(this);
     }
 }
