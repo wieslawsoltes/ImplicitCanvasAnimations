@@ -2,7 +2,7 @@
 using Avalonia.ReactiveUI;
 using System;
 
-namespace ImplicitCanvasAnimations;
+namespace ImplicitCanvasAnimations.Desktop;
 
 class Program
 {

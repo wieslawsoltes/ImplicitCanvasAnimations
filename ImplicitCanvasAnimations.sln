@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{D66F0831
 		nuget.config = nuget.config
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplicitCanvasAnimations.Desktop", "ImplicitCanvasAnimations.Desktop\ImplicitCanvasAnimations.Desktop.csproj", "{AE7FBF42-6480-44C1-9EA4-499C495FCF06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{0CAB6E12-EAFC-4BDF-B6CA-7B47942CFDFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CAB6E12-EAFC-4BDF-B6CA-7B47942CFDFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0CAB6E12-EAFC-4BDF-B6CA-7B47942CFDFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE7FBF42-6480-44C1-9EA4-499C495FCF06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE7FBF42-6480-44C1-9EA4-499C495FCF06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE7FBF42-6480-44C1-9EA4-499C495FCF06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE7FBF42-6480-44C1-9EA4-499C495FCF06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
