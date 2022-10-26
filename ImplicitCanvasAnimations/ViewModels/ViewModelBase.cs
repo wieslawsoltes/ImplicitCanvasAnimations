@@ -1,6 +1,6 @@
 ﻿using ReactiveUI;
 
-namespace CatchMeIfYouCan.ViewModels;
+namespace ImplicitCanvasAnimations.ViewModels;
 
 public class ViewModelBase : ReactiveObject
 {

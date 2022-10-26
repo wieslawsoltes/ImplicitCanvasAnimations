@@ -1,9 +1,9 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using CatchMeIfYouCan.ViewModels;
+using ImplicitCanvasAnimations.ViewModels;
 
-namespace CatchMeIfYouCan;
+namespace ImplicitCanvasAnimations;
 
 public class ViewLocator : IDataTemplate
 {

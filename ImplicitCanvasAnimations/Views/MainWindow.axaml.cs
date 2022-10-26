@@ -7,7 +7,7 @@ using Avalonia.Rendering.Composition;
 using Avalonia.Rendering.Composition.Animations;
 using ReactiveUI;
 
-namespace CatchMeIfYouCan.Views;
+namespace ImplicitCanvasAnimations.Views;
 
 public partial class MainWindow : Window
 {

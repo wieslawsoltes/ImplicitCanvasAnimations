@@ -1,4 +1,4 @@
-﻿namespace CatchMeIfYouCan.ViewModels;
+﻿namespace ImplicitCanvasAnimations.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {

@@ -6,7 +6,7 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using ReactiveUI;
 
-namespace CatchMeIfYouCan.Views;
+namespace ImplicitCanvasAnimations.Views;
 
 public partial class CanvasItem : UserControl
 {

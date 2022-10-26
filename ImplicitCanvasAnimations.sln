@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatchMeIfYouCan", "CatchMeIfYouCan\CatchMeIfYouCan.csproj", "{0CAB6E12-EAFC-4BDF-B6CA-7B47942CFDFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplicitCanvasAnimations", "ImplicitCanvasAnimations\ImplicitCanvasAnimations.csproj", "{0CAB6E12-EAFC-4BDF-B6CA-7B47942CFDFF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{D66F0831-A9E8-4595-9FF2-7D895709347D}"
 	ProjectSection(SolutionItems) = preProject

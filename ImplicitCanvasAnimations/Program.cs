@@ -2,7 +2,7 @@
 using Avalonia.ReactiveUI;
 using System;
 
-namespace CatchMeIfYouCan;
+namespace ImplicitCanvasAnimations;
 
 class Program
 {
