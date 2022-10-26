@@ -6,9 +6,10 @@
              x:Class="CatchMeIfYouCan.Views.CanvasItem"
              Background="Transparent">
   <Border Name="Border" CornerRadius="6" Width="60" Height="60" Background="Gray">
-    <TextBlock HorizontalAlignment="Center" 
+    <TextBlock Name="TextBlock"
+               HorizontalAlignment="Center" 
                VerticalAlignment="Center" 
                Foreground="White" 
-               Text="ClickMe" />
+               Text="TryIt" />
   </Border>
 </UserControl>

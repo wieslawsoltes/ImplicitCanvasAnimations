@@ -19,6 +19,7 @@ public partial class CanvasItem : UserControl
         PointerPressed += (_, _) =>
         {
             Border.Background = Brushes.Green;
+            TextBlock.Text = "Busted";
             _disposable?.Dispose();
         };
 
