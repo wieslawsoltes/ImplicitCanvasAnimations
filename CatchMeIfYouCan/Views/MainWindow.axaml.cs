@@ -1,16 +1,19 @@
 using System;
+using System.Reactive.Linq;
 using Avalonia.Animation.Easings;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Rendering.Composition;
 using Avalonia.Rendering.Composition.Animations;
+using ReactiveUI;
 
 namespace CatchMeIfYouCan.Views;
 
 public partial class MainWindow : Window
 {
     private ImplicitAnimationCollection? _implicitAnimations;
-    
+    private IDisposable? _disposable;
+
     public MainWindow()
     {
         InitializeComponent();
@@ -47,13 +50,13 @@ public partial class MainWindow : Window
         _implicitAnimations["Offset"] = animationGroup;
     }
 
-    private void Button_OnClick(object? sender, RoutedEventArgs e)
+    private void Add()
     {
         var canvasItem = new CanvasItem();
 
         var left = Random.Shared.NextDouble() * Canvas.Bounds.Width;
         var top = Random.Shared.NextDouble() * Canvas.Bounds.Height;
-        
+
         Canvas.SetLeft(canvasItem, left);
         Canvas.SetTop(canvasItem, top);
 
@@ -66,7 +69,50 @@ public partial class MainWindow : Window
                 compositionVisual.ImplicitAnimations = _implicitAnimations;
             }
         };
-        
+
         Canvas.Children.Add(canvasItem);
+    }
+
+    private void Benchmark()
+    {
+        if (_disposable is null)
+        {
+            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromMilliseconds(50))
+                .ObserveOn(RxApp.MainThreadScheduler)
+                .Subscribe(_ => Add());
+
+            ButtonBenchmark.Content = "Stop";
+        }
+        else
+        {
+            _disposable?.Dispose();
+            _disposable = null;
+
+            ButtonBenchmark.Content = "Benchmark";
+        }
+    }
+    private void Clear()
+    {
+        Canvas.Children.Clear();
+    }
+
+    private void ButtonAdd_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Add();
+    }
+
+    private void ButtonBenchmark_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Benchmark();
+    }
+
+    private void ButtonClear_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Clear();
+    }
+
+    private void ButtonFps_OnClick(object? sender, RoutedEventArgs e)
+    {
+        Renderer.DrawFps = !Renderer.DrawFps;
     }
 }

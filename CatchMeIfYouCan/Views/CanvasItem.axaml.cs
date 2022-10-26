@@ -10,7 +10,7 @@ namespace CatchMeIfYouCan.Views;
 
 public partial class CanvasItem : UserControl
 {
-    private readonly IDisposable? _disposable;
+    private IDisposable? _disposable;
 
     public CanvasItem()
     {
@@ -19,13 +19,21 @@ public partial class CanvasItem : UserControl
         PointerPressed += (_, _) =>
         {
             Border.Background = Brushes.Green;
-            TextBlock.Text = "Busted";
+            TextBlock.Text = "Stop";
             _disposable?.Dispose();
         };
 
-        _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromSeconds(1))
-            .ObserveOn(RxApp.MainThreadScheduler)
-            .Subscribe(_ => Move());
+        AttachedToVisualTree += (_, _) =>
+        {
+            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromSeconds(1))
+                .ObserveOn(RxApp.MainThreadScheduler)
+                .Subscribe(_ => Move());
+        };
+
+        DetachedFromVisualTree += (_, _) =>
+        {
+            _disposable?.Dispose();
+        };
     }
 
     private void Move()

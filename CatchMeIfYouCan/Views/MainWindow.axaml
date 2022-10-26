@@ -12,7 +12,39 @@
     <vm:MainWindowViewModel />
   </Design.DataContext>
   <Grid RowDefinitions="*,Auto">
-    <Canvas Grid.Row="0" ClipToBounds="True" Margin="0" Name="Canvas" Background="WhiteSmoke" />
-    <Button Grid.Row="1" Margin="6" HorizontalAlignment="Center" Click="Button_OnClick" Content="Add" />
+    <Canvas Name="Canvas" 
+            ClipToBounds="True" 
+            Margin="0" 
+            Background="WhiteSmoke" 
+            Grid.Row="0" />
+    <StackPanel Orientation="Horizontal" 
+                HorizontalAlignment="Center" 
+                Spacing="6"
+                Margin="0,6,0,6"
+                Grid.Row="1">
+      <Button Name="ButtonClear"
+              HorizontalAlignment="Center" 
+              Click="ButtonClear_OnClick" 
+              Content="Clear" />
+      <Button Name="ButtonBenchmark"
+              HorizontalAlignment="Center" 
+              Click="ButtonBenchmark_OnClick" 
+              Content="Benchmark" />
+      <Button Name="ButtonAdd"
+              HorizontalAlignment="Center" 
+              Click="ButtonAdd_OnClick" 
+              Content="Add" />
+    </StackPanel>
+    <TextBlock Margin="6" 
+               VerticalAlignment="Center" 
+               HorizontalAlignment="Left" 
+               Text="{Binding #Canvas.Children.Count, StringFormat={}Items: {0}}"
+               Grid.Row="1" />
+    <Button Name="ButtonFps"
+            Margin="6" 
+            HorizontalAlignment="Right" 
+            Click="ButtonFps_OnClick" 
+            Content="Fps"
+            Grid.Row="1" />
   </Grid>
 </Window>
