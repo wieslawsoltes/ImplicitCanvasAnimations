@@ -1,12 +1,13 @@
 using System;
+using System.Reactive.Concurrency;
 using System.Reactive.Linq;
 using Avalonia.Animation.Easings;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Rendering.Composition;
 using Avalonia.Rendering.Composition.Animations;
+using Avalonia.Threading;
 using Avalonia.VisualTree;
-using ReactiveUI;
 
 namespace ImplicitCanvasAnimations.Views;
 
@@ -78,8 +79,8 @@ public partial class MainView : UserControl
     {
         if (_disposable is null)
         {
-            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromMilliseconds(50), RxApp.MainThreadScheduler)
-                .ObserveOn(RxApp.MainThreadScheduler)
+            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromMilliseconds(50), AvaloniaScheduler.Instance)
+                .ObserveOn(AvaloniaScheduler.Instance)
                 .Subscribe(_ => Add());
 
             ButtonBenchmark.Content = "Stop";
