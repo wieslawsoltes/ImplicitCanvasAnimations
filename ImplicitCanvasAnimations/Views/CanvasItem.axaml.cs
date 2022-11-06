@@ -1,10 +1,8 @@
 using System;
 using System.Reactive.Linq;
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 using Avalonia.Media;
-using ReactiveUI;
+using Avalonia.Threading;
 
 namespace ImplicitCanvasAnimations.Views;
 
@@ -25,8 +23,8 @@ public partial class CanvasItem : UserControl
 
         AttachedToVisualTree += (_, _) =>
         {
-            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromSeconds(1), RxApp.MainThreadScheduler)
-                .ObserveOn(RxApp.MainThreadScheduler)
+            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromSeconds(1), AvaloniaScheduler.Instance)
+                .ObserveOn(AvaloniaScheduler.Instance)
                 .Subscribe(_ => Move());
         };
 
