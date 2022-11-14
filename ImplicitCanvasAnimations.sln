@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplicitCanvasAnimations.De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplicitCanvasAnimations.Browser", "ImplicitCanvasAnimations.Browser\ImplicitCanvasAnimations.Browser.csproj", "{8DD0D85D-030C-40AB-9A80-ACC15629D3E5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A748EBF1-830A-44B6-9B4C-5D6BFF8E18DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplicitCanvasAnimations.Android", "ImplicitCanvasAnimations.Android\ImplicitCanvasAnimations.Android.csproj", "{04D77BFD-7D6C-40B9-90C2-320B4DD64ABB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +35,15 @@ Global
 		{8DD0D85D-030C-40AB-9A80-ACC15629D3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DD0D85D-030C-40AB-9A80-ACC15629D3E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DD0D85D-030C-40AB-9A80-ACC15629D3E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04D77BFD-7D6C-40B9-90C2-320B4DD64ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04D77BFD-7D6C-40B9-90C2-320B4DD64ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04D77BFD-7D6C-40B9-90C2-320B4DD64ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04D77BFD-7D6C-40B9-90C2-320B4DD64ABB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0CAB6E12-EAFC-4BDF-B6CA-7B47942CFDFF} = {A748EBF1-830A-44B6-9B4C-5D6BFF8E18DE}
+		{8DD0D85D-030C-40AB-9A80-ACC15629D3E5} = {A748EBF1-830A-44B6-9B4C-5D6BFF8E18DE}
+		{AE7FBF42-6480-44C1-9EA4-499C495FCF06} = {A748EBF1-830A-44B6-9B4C-5D6BFF8E18DE}
+		{04D77BFD-7D6C-40B9-90C2-320B4DD64ABB} = {A748EBF1-830A-44B6-9B4C-5D6BFF8E18DE}
 	EndGlobalSection
 EndGlobal
