@@ -4,6 +4,7 @@ using System.Reactive.Linq;
 using Avalonia.Animation.Easings;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Rendering;
 using Avalonia.Rendering.Composition;
 using Avalonia.Rendering.Composition.Animations;
 using Avalonia.Threading;
@@ -79,9 +80,11 @@ public partial class MainView : UserControl
     {
         if (_disposable is null)
         {
-            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromMilliseconds(50), AvaloniaScheduler.Instance)
-                .ObserveOn(AvaloniaScheduler.Instance)
-                .Subscribe(_ => Add());
+            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromMilliseconds(50))
+                .Subscribe(_ =>
+                {
+                    Dispatcher.UIThread.Post(Add);
+                });
 
             ButtonBenchmark.Content = "Stop";
         }
@@ -117,7 +120,10 @@ public partial class MainView : UserControl
     {
         if (this.GetVisualRoot() is TopLevel topLevel)
         {
-            topLevel.Renderer.DrawFps = !topLevel.Renderer.DrawFps;
+            topLevel.Renderer.Diagnostics.DebugOverlays = 
+                topLevel.Renderer.Diagnostics.DebugOverlays == RendererDebugOverlays.Fps 
+                    ? RendererDebugOverlays.None 
+                    : RendererDebugOverlays.Fps;
         }
     }
 }

@@ -23,9 +23,11 @@ public partial class CanvasItem : UserControl
 
         AttachedToVisualTree += (_, _) =>
         {
-            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromSeconds(1), AvaloniaScheduler.Instance)
-                .ObserveOn(AvaloniaScheduler.Instance)
-                .Subscribe(_ => Move());
+            _disposable = Observable.Timer(TimeSpan.Zero, TimeSpan.FromSeconds(1))
+                .Subscribe(_ =>
+                {
+                    Dispatcher.UIThread.Post(Move);
+                });
         };
 
         DetachedFromVisualTree += (_, _) =>
