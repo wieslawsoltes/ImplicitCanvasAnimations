@@ -11,7 +11,6 @@
     <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="XamlNameReferenceGenerator" Version="1.5.1" />
     <PackageReference Include="System.Reactive" Version="5.0.0" />
   </ItemGroup>
 </Project>
