@@ -120,8 +120,8 @@ public partial class MainView : UserControl
     {
         if (this.GetVisualRoot() is TopLevel topLevel)
         {
-            topLevel.Renderer.Diagnostics.DebugOverlays = 
-                topLevel.Renderer.Diagnostics.DebugOverlays == RendererDebugOverlays.Fps 
+            topLevel.RendererDiagnostics.DebugOverlays = 
+                topLevel.RendererDiagnostics.DebugOverlays == RendererDebugOverlays.Fps 
                     ? RendererDebugOverlays.None 
                     : RendererDebugOverlays.Fps;
         }
